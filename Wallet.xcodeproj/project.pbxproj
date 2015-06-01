@@ -14,10 +14,6 @@
 		B1D02B731B1CF3BC00426DC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B721B1CF3BC00426DC9 /* Images.xcassets */; };
 		B1D02B761B1CF3BC00426DC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B741B1CF3BC00426DC9 /* LaunchScreen.xib */; };
 		B1D02B8C1B1CF5AA00426DC9 /* MXWEuroTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B8B1B1CF5AA00426DC9 /* MXWEuroTest.m */; };
-		B1D02B8F1B1CF69000426DC9 /* MXWEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B8E1B1CF69000426DC9 /* MXWEuro.m */; };
-		B1D02B901B1CF69000426DC9 /* MXWEuro.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B8E1B1CF69000426DC9 /* MXWEuro.m */; };
-		B1D02B931B1D057100426DC9 /* MXWDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B921B1D057100426DC9 /* MXWDollar.m */; };
-		B1D02B941B1D057100426DC9 /* MXWDollar.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B921B1D057100426DC9 /* MXWDollar.m */; };
 		B1D02B961B1D05D400426DC9 /* MXWDollarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B951B1D05D400426DC9 /* MXWDollarTest.m */; };
 		B1D02B991B1D075900426DC9 /* MXWMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B981B1D075900426DC9 /* MXWMoney.m */; };
 		B1D02B9A1B1D075900426DC9 /* MXWMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B981B1D075900426DC9 /* MXWMoney.m */; };
@@ -48,10 +44,6 @@
 		B1D02B7B1B1CF3BC00426DC9 /* WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D02B801B1CF3BC00426DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1D02B8B1B1CF5AA00426DC9 /* MXWEuroTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWEuroTest.m; sourceTree = "<group>"; };
-		B1D02B8D1B1CF69000426DC9 /* MXWEuro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWEuro.h; sourceTree = "<group>"; };
-		B1D02B8E1B1CF69000426DC9 /* MXWEuro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWEuro.m; sourceTree = "<group>"; };
-		B1D02B911B1D057100426DC9 /* MXWDollar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWDollar.h; sourceTree = "<group>"; };
-		B1D02B921B1D057100426DC9 /* MXWDollar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWDollar.m; sourceTree = "<group>"; };
 		B1D02B951B1D05D400426DC9 /* MXWDollarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWDollarTest.m; sourceTree = "<group>"; };
 		B1D02B971B1D075900426DC9 /* MXWMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWMoney.h; sourceTree = "<group>"; };
 		B1D02B981B1D075900426DC9 /* MXWMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWMoney.m; sourceTree = "<group>"; };
@@ -106,10 +98,6 @@
 				B1D02B721B1CF3BC00426DC9 /* Images.xcassets */,
 				B1D02B741B1CF3BC00426DC9 /* LaunchScreen.xib */,
 				B1D02B651B1CF3BC00426DC9 /* Supporting Files */,
-				B1D02B8D1B1CF69000426DC9 /* MXWEuro.h */,
-				B1D02B8E1B1CF69000426DC9 /* MXWEuro.m */,
-				B1D02B911B1D057100426DC9 /* MXWDollar.h */,
-				B1D02B921B1D057100426DC9 /* MXWDollar.m */,
 				B1D02B971B1D075900426DC9 /* MXWMoney.h */,
 				B1D02B981B1D075900426DC9 /* MXWMoney.m */,
 				B1D02B9D1B1D0D3000426DC9 /* MXWMoneyPrivate.h */,
@@ -250,8 +238,6 @@
 				B1D02B6B1B1CF3BC00426DC9 /* AppDelegate.m in Sources */,
 				B1D02B681B1CF3BC00426DC9 /* main.m in Sources */,
 				B1D02B991B1D075900426DC9 /* MXWMoney.m in Sources */,
-				B1D02B931B1D057100426DC9 /* MXWDollar.m in Sources */,
-				B1D02B8F1B1CF69000426DC9 /* MXWEuro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +248,7 @@
 				B1D02B961B1D05D400426DC9 /* MXWDollarTest.m in Sources */,
 				B1D02B9C1B1D0BB900426DC9 /* MXWMoneyTest.m in Sources */,
 				B1D02B8C1B1CF5AA00426DC9 /* MXWEuroTest.m in Sources */,
-				B1D02B901B1CF69000426DC9 /* MXWEuro.m in Sources */,
 				B1D02B9A1B1D075900426DC9 /* MXWMoney.m in Sources */,
-				B1D02B941B1D057100426DC9 /* MXWDollar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

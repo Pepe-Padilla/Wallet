@@ -28,8 +28,17 @@
 
 - (void) testException {
     
-    XCTAssertNoThrow([[MXWMoney alloc] initWithAmount: 5]);
+    XCTAssertNoThrow([[MXWMoney alloc] initWithAmount: 5 currency:@"NMX"]);
     
+}
+
+- (void) testCurrency {
+    MXWMoney * dollars = [MXWMoney dollarWithAmount: 1];
+    MXWMoney * euros = [MXWMoney euroWithAmount: 1];
+    
+    XCTAssertEqualObjects([MXWMoney dollarWithAmount: 1], dollars);
+    XCTAssertNotEqualObjects(dollars, euros);
+
 }
 
 @end

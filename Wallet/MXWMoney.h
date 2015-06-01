@@ -10,7 +10,11 @@
 
 @interface MXWMoney : NSObject
 
-- (id) initWithAmount: (NSUInteger) amount;
++ (instancetype) dollarWithAmount: (NSInteger) amount;
++ (instancetype) euroWithAmount: (NSInteger) amount;
+
+- (id) initWithAmount: (NSUInteger) amount
+             currency: (NSString *) currency;
 
 - (MXWMoney*) times: (NSUInteger) multiplier;
 

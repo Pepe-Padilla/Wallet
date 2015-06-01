@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "MXWDollar.h"
+#import "MXWMoney.h"
 
 @interface MXWDollarTest : XCTestCase
 
@@ -27,20 +27,20 @@
 }
 
 - (void) testMultiplicacition {
-    MXWDollar * five = [[MXWDollar alloc] initWithAmount: 5];
-    MXWDollar * x = [five times:2];
+    MXWMoney * five = [MXWMoney dollarWithAmount:5];
+    MXWMoney * x = [five times:2];
     
-    XCTAssertEqualObjects(x, [[MXWDollar alloc] initWithAmount:10]);
+    XCTAssertEqualObjects(x, [MXWMoney dollarWithAmount:10]);
 }
 
 
 - (void) testEquality {
-    MXWDollar * five = [[MXWDollar alloc] initWithAmount: 5];
-    MXWDollar * otherfive = [[MXWDollar alloc] initWithAmount: 5];
+    MXWMoney * five = [MXWMoney dollarWithAmount:5];
+    MXWMoney * otherfive = [MXWMoney dollarWithAmount:5];
     
     XCTAssertEqualObjects(five, otherfive);
     
-    MXWDollar * seven = [[MXWDollar alloc] initWithAmount: 7];
+    MXWMoney * seven = [MXWMoney dollarWithAmount:7];
     
     XCTAssertNotEqual(five, seven);
 }

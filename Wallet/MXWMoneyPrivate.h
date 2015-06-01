@@ -11,5 +11,6 @@
 @interface MXWMoney ()
 
 @property (nonatomic) NSUInteger amount;
+@property (nonatomic, copy) NSString * currency;
 
 @end
