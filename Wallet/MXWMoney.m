@@ -33,7 +33,7 @@
 
 + (instancetype) dollarWithAmount: (NSInteger) amount{
     return [[MXWMoney alloc] initWithAmount:amount
-                                   currency:@"UDS"];
+                                   currency:@"USD"];
 }
 
 - (MXWMoney *) times: (NSUInteger) multiplier {

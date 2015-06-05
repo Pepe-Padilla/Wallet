@@ -10,6 +10,10 @@
 
 @interface MXWMoney : NSObject
 
+@property (nonatomic,readonly) NSUInteger amount;
+@property (nonatomic, copy, readonly) NSString * currency;
+
+
 + (instancetype) dollarWithAmount: (NSInteger) amount;
 + (instancetype) euroWithAmount: (NSInteger) amount;
 

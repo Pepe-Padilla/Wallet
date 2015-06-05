@@ -13,8 +13,6 @@
 		B1D02B711B1CF3BC00426DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B6F1B1CF3BC00426DC9 /* Main.storyboard */; };
 		B1D02B731B1CF3BC00426DC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B721B1CF3BC00426DC9 /* Images.xcassets */; };
 		B1D02B761B1CF3BC00426DC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B741B1CF3BC00426DC9 /* LaunchScreen.xib */; };
-		B1D02B8C1B1CF5AA00426DC9 /* MXWEuroTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B8B1B1CF5AA00426DC9 /* MXWEuroTest.m */; };
-		B1D02B961B1D05D400426DC9 /* MXWDollarTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B951B1D05D400426DC9 /* MXWDollarTest.m */; };
 		B1D02B991B1D075900426DC9 /* MXWMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B981B1D075900426DC9 /* MXWMoney.m */; };
 		B1D02B9A1B1D075900426DC9 /* MXWMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B981B1D075900426DC9 /* MXWMoney.m */; };
 		B1D02B9C1B1D0BB900426DC9 /* MXWMoneyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B9B1B1D0BB900426DC9 /* MXWMoneyTest.m */; };
@@ -43,12 +41,9 @@
 		B1D02B751B1CF3BC00426DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B1D02B7B1B1CF3BC00426DC9 /* WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D02B801B1CF3BC00426DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1D02B8B1B1CF5AA00426DC9 /* MXWEuroTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWEuroTest.m; sourceTree = "<group>"; };
-		B1D02B951B1D05D400426DC9 /* MXWDollarTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWDollarTest.m; sourceTree = "<group>"; };
 		B1D02B971B1D075900426DC9 /* MXWMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWMoney.h; sourceTree = "<group>"; };
 		B1D02B981B1D075900426DC9 /* MXWMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWMoney.m; sourceTree = "<group>"; };
 		B1D02B9B1B1D0BB900426DC9 /* MXWMoneyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWMoneyTest.m; sourceTree = "<group>"; };
-		B1D02B9D1B1D0D3000426DC9 /* MXWMoneyPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXWMoneyPrivate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +95,6 @@
 				B1D02B651B1CF3BC00426DC9 /* Supporting Files */,
 				B1D02B971B1D075900426DC9 /* MXWMoney.h */,
 				B1D02B981B1D075900426DC9 /* MXWMoney.m */,
-				B1D02B9D1B1D0D3000426DC9 /* MXWMoneyPrivate.h */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -118,8 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				B1D02B7F1B1CF3BC00426DC9 /* Supporting Files */,
-				B1D02B8B1B1CF5AA00426DC9 /* MXWEuroTest.m */,
-				B1D02B951B1D05D400426DC9 /* MXWDollarTest.m */,
 				B1D02B9B1B1D0BB900426DC9 /* MXWMoneyTest.m */,
 			);
 			path = WalletTests;
@@ -245,9 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D02B961B1D05D400426DC9 /* MXWDollarTest.m in Sources */,
 				B1D02B9C1B1D0BB900426DC9 /* MXWMoneyTest.m in Sources */,
-				B1D02B8C1B1CF5AA00426DC9 /* MXWEuroTest.m in Sources */,
 				B1D02B9A1B1D075900426DC9 /* MXWMoney.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +427,7 @@
 				B1D02B871B1CF3BC00426DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1D02B881B1CF3BC00426DC9 /* Build configuration list for PBXNativeTarget "WalletTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +436,7 @@
 				B1D02B8A1B1CF3BC00426DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
