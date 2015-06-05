@@ -10,14 +10,14 @@
 
 @interface MXWMoney ()
 
-@property (nonatomic) NSUInteger amount;
+@property (nonatomic) NSNumber * amount;
 @property (nonatomic, copy) NSString * currency;
 
 @end
 
 @implementation MXWMoney
 
-- (id) initWithAmount: (NSUInteger) amount currency: (NSString *) currency{
+- (id) initWithAmount: (NSNumber *) amount currency: (NSString *) currency{
     if (self = [super init] ) {
         _amount = amount;
         _currency = currency;
@@ -26,19 +26,23 @@
     return self;
 }
 
-+ (instancetype) euroWithAmount: (NSInteger) amount {
++ (instancetype) euroWithAmount: (NSNumber *) amount {
     return [[MXWMoney alloc] initWithAmount:amount
                                    currency:@"EUR"];
 }
 
-+ (instancetype) dollarWithAmount: (NSInteger) amount{
++ (instancetype) dollarWithAmount: (NSNumber *) amount{
     return [[MXWMoney alloc] initWithAmount:amount
                                    currency:@"USD"];
 }
 
-- (MXWMoney *) times: (NSUInteger) multiplier {
-    return  [[MXWMoney alloc] initWithAmount: self.amount * multiplier
+- (MXWMoney *) times: (NSNumber *) multiplier {
+    return  [[MXWMoney alloc] initWithAmount: @([self.amount doubleValue] * [multiplier doubleValue])
                                     currency: self.currency];
+}
+
+- (MXWMoney *) add: (MXWMoney *) aMoney {
+    return [[MXWMoney alloc] initWithAmount:@([self.amount doubleValue] + [aMoney.amount doubleValue]) currency:self.currency];
 }
 
 - (BOOL)isEqual:(id)object {
@@ -46,7 +50,7 @@
         return YES;
     else if([object isKindOfClass:[MXWMoney class]]) {
         MXWMoney * ob = object;
-        return (self.amount == ob.amount && [self.currency isEqualToString:ob.currency]);
+        return ([self.amount doubleValue] == [ob.amount doubleValue] && [self.currency isEqualToString:ob.currency]);
     } else {
         return NO;
     }

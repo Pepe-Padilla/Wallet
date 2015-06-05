@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 maxeiware. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 #import <XCTest/XCTest.h>
 #import "MXWMoney.h"
 
@@ -28,45 +28,45 @@
 
 
 - (void) testMultiplicacition {
-    MXWMoney * five = [MXWMoney dollarWithAmount:5];
-    MXWMoney * x = [five times:2];
+    MXWMoney * five = [MXWMoney dollarWithAmount:@(5.0)];
+    MXWMoney * x = [five times:@(2.0)];
     
-    XCTAssertEqualObjects(x, [MXWMoney dollarWithAmount:10]);
+    XCTAssertEqualObjects(x, [MXWMoney dollarWithAmount:@(10.0)]);
 }
 
 
 - (void) testEquality {
-    MXWMoney * five = [MXWMoney dollarWithAmount:5];
-    MXWMoney * otherfive = [MXWMoney dollarWithAmount:5];
+    MXWMoney * five = [MXWMoney dollarWithAmount:@(5.0)];
+    MXWMoney * otherfive = [MXWMoney dollarWithAmount:@(5.0)];
     
     XCTAssertEqualObjects(five, otherfive);
     
-    MXWMoney * seven = [MXWMoney dollarWithAmount:7];
+    MXWMoney * seven = [MXWMoney dollarWithAmount:@(7.0)];
     
     XCTAssertNotEqual(five, seven);
 }
 
 - (void) testException {
     
-    XCTAssertNoThrow([[MXWMoney alloc] initWithAmount: 5 currency:@"NMX"]);
+    XCTAssertNoThrow([[MXWMoney alloc] initWithAmount:@(5.0) currency:@"NMX"]);
     
 }
 
 - (void) testCurrencyWithEquality {
-    MXWMoney * dollars = [MXWMoney dollarWithAmount: 1];
-    MXWMoney * euros = [MXWMoney euroWithAmount: 1];
+    MXWMoney * dollars = [MXWMoney dollarWithAmount: @(1.0)];
+    MXWMoney * euros = [MXWMoney euroWithAmount: @(1.0)];
     
-    XCTAssertEqualObjects([MXWMoney dollarWithAmount: 1], dollars);
+    XCTAssertEqualObjects([MXWMoney dollarWithAmount: @(1.0)], dollars);
     XCTAssertNotEqualObjects(dollars, euros);
 
 }
 
 -(void) testCurrencyProperty{
     
-    MXWMoney *dollars = [MXWMoney dollarWithAmount:1];
+    MXWMoney *dollars = [MXWMoney dollarWithAmount:@(1.0)];
     XCTAssertEqualObjects(@"USD", [dollars currency]);
     
-    MXWMoney *euros = [MXWMoney euroWithAmount:1];
+    MXWMoney *euros = [MXWMoney euroWithAmount:@(1.0)];
     XCTAssertEqualObjects(@"EUR", [euros currency]);
     
 }
@@ -74,10 +74,25 @@
 -(void) testThatInitDoesNotRaiseException{
     
     
-    XCTAssertNoThrow([MXWMoney dollarWithAmount:3]);
-    XCTAssertNoThrow([MXWMoney euroWithAmount:3]);
+    XCTAssertNoThrow([MXWMoney dollarWithAmount:@(3.0)]);
+    XCTAssertNoThrow([MXWMoney euroWithAmount:@(3.0)]);
     
 }
+
+- (void) testAddMoneySameCurrency {
+    MXWMoney * euro1 = [MXWMoney euroWithAmount:@(3.0)];
+    MXWMoney * euro2 = [MXWMoney euroWithAmount:@(2.0)];
+    
+    MXWMoney * euroSum = [euro1 add:euro2];
+    
+    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(5.0)], euroSum);
+    
+}
+
+
+
+
+
 
 
 @end

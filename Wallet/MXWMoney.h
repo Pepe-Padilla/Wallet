@@ -10,16 +10,17 @@
 
 @interface MXWMoney : NSObject
 
-@property (nonatomic,readonly) NSUInteger amount;
+@property (nonatomic,readonly) NSNumber* amount;
 @property (nonatomic, copy, readonly) NSString * currency;
 
 
-+ (instancetype) dollarWithAmount: (NSInteger) amount;
-+ (instancetype) euroWithAmount: (NSInteger) amount;
++ (instancetype) dollarWithAmount: (NSNumber*) amount;
++ (instancetype) euroWithAmount: (NSNumber *) amount;
 
-- (id) initWithAmount: (NSUInteger) amount
+- (id) initWithAmount: (NSNumber *) amount
              currency: (NSString *) currency;
 
-- (MXWMoney*) times: (NSUInteger) multiplier;
+- (MXWMoney *) times: (NSNumber *) multiplier;
+- (MXWMoney *) add: (MXWMoney *) aMoney;
 
 @end
