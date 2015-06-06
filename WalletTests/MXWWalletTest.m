@@ -86,14 +86,20 @@
     
     MXWWallet * aWallet = [MXWWallet new];
     MXWMoney * someEuros = [MXWMoney euroWithAmount:@(2.0)];
+    MXWMoney * otherEuros = [MXWMoney euroWithAmount:@(8.0)];
+    
     MXWMoney * someDollars = [MXWMoney dollarWithAmount:@(4.0)];
+    MXWMoney * otherDollars = [MXWMoney dollarWithAmount:@(11.0)];
     
     [aWallet addMoney:someEuros];
     [aWallet addMoney:someDollars];
     
+    [aWallet addMoney:otherEuros];
+    [aWallet addMoney:otherDollars];
+    
     MXWMoney * granTotal = [aWallet sumTotalWithCurrency:@"EUR" andBroker:self.aBroker];
     
-    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(4.0)], granTotal);
+    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(17.5)], granTotal);
     
     
 }

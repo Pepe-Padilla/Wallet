@@ -91,12 +91,16 @@
     
     if (section >= [self.wallet walletSections].count) {
         prefix = @"Total: ";
+        moneyPenny = [self.wallet sumTotalWithCurrency:@"EUR" andBroker:self.broker];
     } else {
         NSString * currency = [[self.wallet walletSections] objectAtIndex:section];
         if (row >= [self.wallet moniesForCurrency:currency]) {
-             prefix = @"Sub Total: ";
+            prefix = @"Sub Total: ";
+            
+            moneyPenny = [self.wallet subTotalForcurrency:currency];
+            
         } else {
-            NSString* currency = [[self.wallet walletSections] objectAtIndex:section];
+            
             moneyPenny = [self.wallet moneyForCurrency:currency atIndex:row];
         }
     }
