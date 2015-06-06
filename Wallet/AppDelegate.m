@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "MXWWalletTableViewController.h"
+#import "MXWWallet.h"
+#import "MXWBroker.h"
+#import "MXWMoney.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,36 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // set window incial
+    [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
+    
+    // dummy model ->
+    MXWWallet * wallet = [MXWWallet new];
+    MXWBroker * aBroker = [MXWBroker new];
+    [aBroker addRate:@(2.0) fromCurrency:@"EUR" toCurrency:@"USD"];
+    
+    MXWMoney * someEuros = [MXWMoney euroWithAmount:@(2.0)];
+    MXWMoney * otherEuros = [MXWMoney euroWithAmount:@(8.0)];
+    
+    MXWMoney * someDollars = [MXWMoney dollarWithAmount:@(4.0)];
+    MXWMoney * otherDollars = [MXWMoney dollarWithAmount:@(11.0)];
+    
+    [wallet addMoney:someEuros];
+    [wallet addMoney:someDollars];
+    [wallet addMoney:otherEuros];
+    [wallet addMoney:otherDollars];
+    
+    // <- dummy model
+    
+    MXWWalletTableViewController * wTVC = [[MXWWalletTableViewController alloc] initWithModel:wallet
+                                                                                    andBroker:aBroker];
+    self.window.rootViewController = wTVC;
+    
+    
+    
+    // show window
+    [[self window] makeKeyAndVisible];
     return YES;
 }
 

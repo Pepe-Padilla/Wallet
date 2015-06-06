@@ -16,6 +16,8 @@
 
 - (void) addMoney:(MXWMoney*) aMoney;
 - (MXWMoney*) takeMoneyForCurrency:(NSString*) currency atIndex:(NSUInteger) index;
+
+- (MXWMoney*) subTotalForcurrency:(NSString*) currency;
 - (MXWMoney*) sumTotalWithCurrency:(NSString*) currency andBroker:(MXWBroker*) broker;
 
 - (NSArray*) walletSections;

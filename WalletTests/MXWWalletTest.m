@@ -96,6 +96,30 @@
     XCTAssertEqualObjects([MXWMoney euroWithAmount: @(4.0)], granTotal);
     
     
+}
+
+-(void) testSubTotalForCurrency {
+    
+    
+    MXWWallet * aWallet = [MXWWallet new];
+    MXWMoney * someEuros = [MXWMoney euroWithAmount:@(2.0)];
+    MXWMoney * otherEuros = [MXWMoney euroWithAmount:@(8.0)];
+    
+    MXWMoney * someDollars = [MXWMoney dollarWithAmount:@(4.0)];
+    MXWMoney * otherDollars = [MXWMoney dollarWithAmount:@(11.0)];
+    
+    [aWallet addMoney:someEuros];
+    [aWallet addMoney:someDollars];
+    
+    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(2.0)], [aWallet subTotalForcurrency:@"EUR"]);
+    XCTAssertEqualObjects([MXWMoney dollarWithAmount: @(4.0)], [aWallet subTotalForcurrency:@"USD"]);
+    
+    [aWallet addMoney:otherEuros];
+    [aWallet addMoney:otherDollars];
+    
+    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(10.0)], [aWallet subTotalForcurrency:@"EUR"]);
+    XCTAssertEqualObjects([MXWMoney dollarWithAmount: @(15.0)], [aWallet subTotalForcurrency:@"USD"]);
+    
     
 }
 

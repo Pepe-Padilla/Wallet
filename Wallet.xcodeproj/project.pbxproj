@@ -13,10 +13,11 @@
 		B12F8D181B2251BC00FF04B9 /* MXWBrokerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F8D171B2251BC00FF04B9 /* MXWBrokerTest.m */; };
 		B12F8D1C1B22560F00FF04B9 /* MXWBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F8D1B1B22560F00FF04B9 /* MXWBroker.m */; };
 		B12F8D1D1B22560F00FF04B9 /* MXWBroker.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F8D1B1B22560F00FF04B9 /* MXWBroker.m */; };
+		B17C59B61B22D82A00948832 /* MXWWalletTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59B51B22D82A00948832 /* MXWWalletTableViewControllerTest.m */; };
+		B17C59B91B22DB6400948832 /* MXWWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */; };
+		B17C59BA1B22DB6400948832 /* MXWWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */; };
 		B1D02B681B1CF3BC00426DC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B671B1CF3BC00426DC9 /* main.m */; };
 		B1D02B6B1B1CF3BC00426DC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B6A1B1CF3BC00426DC9 /* AppDelegate.m */; };
-		B1D02B6E1B1CF3BC00426DC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B6D1B1CF3BC00426DC9 /* ViewController.m */; };
-		B1D02B711B1CF3BC00426DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B6F1B1CF3BC00426DC9 /* Main.storyboard */; };
 		B1D02B731B1CF3BC00426DC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B721B1CF3BC00426DC9 /* Images.xcassets */; };
 		B1D02B761B1CF3BC00426DC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B741B1CF3BC00426DC9 /* LaunchScreen.xib */; };
 		B1D02B991B1D075900426DC9 /* MXWMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B981B1D075900426DC9 /* MXWMoney.m */; };
@@ -41,14 +42,14 @@
 		B12F8D171B2251BC00FF04B9 /* MXWBrokerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWBrokerTest.m; sourceTree = "<group>"; };
 		B12F8D1A1B22560F00FF04B9 /* MXWBroker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWBroker.h; sourceTree = "<group>"; };
 		B12F8D1B1B22560F00FF04B9 /* MXWBroker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWBroker.m; sourceTree = "<group>"; };
+		B17C59B51B22D82A00948832 /* MXWWalletTableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWWalletTableViewControllerTest.m; sourceTree = "<group>"; };
+		B17C59B71B22DB6400948832 /* MXWWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWWalletTableViewController.h; sourceTree = "<group>"; };
+		B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWWalletTableViewController.m; sourceTree = "<group>"; };
 		B1D02B621B1CF3BC00426DC9 /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D02B661B1CF3BC00426DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1D02B671B1CF3BC00426DC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B1D02B691B1CF3BC00426DC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B1D02B6A1B1CF3BC00426DC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B1D02B6C1B1CF3BC00426DC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B1D02B6D1B1CF3BC00426DC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B1D02B701B1CF3BC00426DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1D02B721B1CF3BC00426DC9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B1D02B751B1CF3BC00426DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B1D02B7B1B1CF3BC00426DC9 /* WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +90,33 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		B17C59B41B22D7FB00948832 /* ModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				B1D02B9B1B1D0BB900426DC9 /* MXWMoneyTest.m */,
+				B12F8D151B223C8A00FF04B9 /* MXWWalletTest.m */,
+				B12F8D171B2251BC00FF04B9 /* MXWBrokerTest.m */,
+			);
+			name = ModelTest;
+			sourceTree = "<group>";
+		};
+		B17C59BB1B22DB7600948832 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B17C59B71B22DB6400948832 /* MXWWalletTableViewController.h */,
+				B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B17C59BC1B22DB8C00948832 /* ControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+				B17C59B51B22D82A00948832 /* MXWWalletTableViewControllerTest.m */,
+			);
+			name = ControllerTest;
+			sourceTree = "<group>";
+		};
 		B1D02B591B1CF3BC00426DC9 = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +140,11 @@
 			children = (
 				B1D02B691B1CF3BC00426DC9 /* AppDelegate.h */,
 				B1D02B6A1B1CF3BC00426DC9 /* AppDelegate.m */,
-				B1D02B6C1B1CF3BC00426DC9 /* ViewController.h */,
-				B1D02B6D1B1CF3BC00426DC9 /* ViewController.m */,
-				B1D02B6F1B1CF3BC00426DC9 /* Main.storyboard */,
 				B1D02B721B1CF3BC00426DC9 /* Images.xcassets */,
 				B1D02B741B1CF3BC00426DC9 /* LaunchScreen.xib */,
 				B1D02B651B1CF3BC00426DC9 /* Supporting Files */,
 				B12F8D101B22215900FF04B9 /* Model */,
+				B17C59BB1B22DB7600948832 /* Controller */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -136,9 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				B1D02B7F1B1CF3BC00426DC9 /* Supporting Files */,
-				B1D02B9B1B1D0BB900426DC9 /* MXWMoneyTest.m */,
-				B12F8D151B223C8A00FF04B9 /* MXWWalletTest.m */,
-				B12F8D171B2251BC00FF04B9 /* MXWBrokerTest.m */,
+				B17C59B41B22D7FB00948832 /* ModelTest */,
+				B17C59BC1B22DB8C00948832 /* ControllerTest */,
 			);
 			path = WalletTests;
 			sourceTree = "<group>";
@@ -232,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D02B711B1CF3BC00426DC9 /* Main.storyboard in Resources */,
 				B1D02B761B1CF3BC00426DC9 /* LaunchScreen.xib in Resources */,
 				B1D02B731B1CF3BC00426DC9 /* Images.xcassets in Resources */,
 			);
@@ -252,10 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1D02B6E1B1CF3BC00426DC9 /* ViewController.m in Sources */,
 				B1D02B6B1B1CF3BC00426DC9 /* AppDelegate.m in Sources */,
 				B12F8D131B223C7300FF04B9 /* MXWWallet.m in Sources */,
 				B1D02B681B1CF3BC00426DC9 /* main.m in Sources */,
+				B17C59B91B22DB6400948832 /* MXWWalletTableViewController.m in Sources */,
 				B1D02B991B1D075900426DC9 /* MXWMoney.m in Sources */,
 				B12F8D1C1B22560F00FF04B9 /* MXWBroker.m in Sources */,
 			);
@@ -269,6 +293,8 @@
 				B1D02B9C1B1D0BB900426DC9 /* MXWMoneyTest.m in Sources */,
 				B12F8D181B2251BC00FF04B9 /* MXWBrokerTest.m in Sources */,
 				B1D02B9A1B1D075900426DC9 /* MXWMoney.m in Sources */,
+				B17C59B61B22D82A00948832 /* MXWWalletTableViewControllerTest.m in Sources */,
+				B17C59BA1B22DB6400948832 /* MXWWalletTableViewController.m in Sources */,
 				B12F8D161B223C8A00FF04B9 /* MXWWalletTest.m in Sources */,
 				B12F8D1D1B22560F00FF04B9 /* MXWBroker.m in Sources */,
 			);
@@ -285,14 +311,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B1D02B6F1B1CF3BC00426DC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1D02B701B1CF3BC00426DC9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B1D02B741B1CF3BC00426DC9 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

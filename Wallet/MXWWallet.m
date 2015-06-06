@@ -73,6 +73,18 @@
     return sumTotal;
 }
 
+- (MXWMoney*) subTotalForcurrency:(NSString*) currency {
+    __block MXWMoney * sumTotal = [[MXWMoney alloc] initWithAmount:@(0) currency:currency];
+    
+    
+    NSMutableArray* arrMoney = [self.monies objectForKey:currency];;
+    [arrMoney enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        sumTotal = [sumTotal add:obj withBroker:[MXWBroker new]];
+    }];
+    
+    return sumTotal;
+}
+
 - (NSArray*) walletSections {
     return [self.monies allKeys];
 }
