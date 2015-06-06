@@ -35,7 +35,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addEUR = [[UIBarButtonItem alloc] initWithTitle:@"EUR"
                                                                 style:UIBarButtonItemStylePlain
@@ -128,25 +128,54 @@
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
+    NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
+    
+    if (section >= [self.wallet walletSections].count) {
+        return NO;
+    } else {
+        NSString * currency = [[self.wallet walletSections] objectAtIndex:section];
+        if (row >= [self.wallet moniesForCurrency:currency]) {
+            return NO;
+            
+        }
+    }
+    
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        NSInteger section = indexPath.section;
+        NSInteger row = indexPath.row;
+        
+        if (section >= [self.wallet walletSections].count) {
+        } else {
+            NSString * currency = [[self.wallet walletSections] objectAtIndex:section];
+            if (row >= [self.wallet moniesForCurrency:currency]) {
+                
+            } else {
+                [self.wallet takeMoneyForCurrency:currency atIndex:row];
+                //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+                [self.tableView reloadData];
+            }
+        }
+        
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -154,13 +183,13 @@
 }
 */
 
-/*
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return NO;
 }
-*/
+
 
 #pragma mark - actions
 -(void) addEUR {
