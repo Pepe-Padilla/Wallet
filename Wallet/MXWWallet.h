@@ -24,4 +24,6 @@
 - (NSUInteger) moniesForCurrency:(NSString*) currency;
 - (MXWMoney*) moneyForCurrency:(NSString*) currency atIndex:(NSUInteger) index;
 
+-(void) loadModel;
+
 @end

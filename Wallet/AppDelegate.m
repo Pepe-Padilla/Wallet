@@ -24,12 +24,15 @@
     // set window incial
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     
-    // dummy model ->
+    
     MXWWallet * wallet = [MXWWallet new];
     MXWBroker * aBroker = [MXWBroker new];
     [aBroker addRate:@(1.1113) fromCurrency:@"EUR" toCurrency:@"USD"];
     [aBroker addRate:@(0.727922) fromCurrency:@"EUR" toCurrency:@"GBP"];
     
+    [wallet loadModel];
+    
+    /* dummy model ->
     MXWMoney * someEuros = [MXWMoney euroWithAmount:@(2.0)];
     MXWMoney * otherEuros = [MXWMoney euroWithAmount:@(8.0)];
     MXWMoney * someDollars = [MXWMoney dollarWithAmount:@(4.0)];
@@ -40,8 +43,7 @@
     [wallet addMoney:otherEuros];
     [wallet addMoney:otherDollars];
     [wallet addMoney:[[MXWMoney alloc] initWithAmount:@(10.0) currency:@"GBP"]];
-    
-    // <- dummy model
+    // <- dummy model */
     
     MXWWalletTableViewController * wTVC = [[MXWWalletTableViewController alloc] initWithModel:wallet
                                                                                     andBroker:aBroker];
