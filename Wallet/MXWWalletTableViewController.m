@@ -11,10 +11,14 @@
 #import "MXWBroker.h"
 #import "MXWMoney.h"
 
+//#import "MXWSemiModalAnimatedTransition.h"
+
 @interface MXWWalletTableViewController ()
 
 @property (strong, nonatomic) MXWWallet* wallet;
 @property (strong, nonatomic) MXWBroker* broker;
+
+@property (nonatomic, assign) BOOL presenting;
 
 @end
 
@@ -28,14 +32,24 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *addEUR = [[UIBarButtonItem alloc] initWithTitle:@"EUR"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(addEUR)];
+    UIBarButtonItem *addUSD = [[UIBarButtonItem alloc] initWithTitle:@"USD"
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:@selector(addUSD)];
+    UIBarButtonItem *addGBP = [[UIBarButtonItem alloc] initWithTitle:@"GBP"
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:@selector(addGBP)];
+    self.navigationItem.rightBarButtonItems = @[addEUR,addUSD, addGBP];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -157,5 +171,75 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - actions
+-(void) addEUR {
+    // 320 , 46
+    MXWAddMoneyViewController * mvc = [[MXWAddMoneyViewController alloc] initWithCurrency:@"EUR"];
+    mvc.delegate = self;
+    
+    
+    mvc.modalPresentationStyle = UIModalPresentationPopover;
+    
+    
+    //mvc.transitioningDelegate = self;
+    
+    
+    //mvc.modalPresentationCapturesStatusBarAppearance =YES;
+    
+    //UIModalPresentationFullScreen = 0;
+    //UIModalPresentationPageSheet,
+    //UIModalPresentationFormSheet,
+    //UIModalPresentationCurrentContext;
+    [self presentViewController:mvc animated:YES completion:^{
+        //mvc.view.backgroundColor = [UIColor clearColor];
+        //mvc.view.bounds = CGRectMake(0, 64, 320, 46);
+        
+    }];
+}
+
+-(void) addUSD {
+    
+}
+
+-(void) addGBP {
+    
+}
+
+#pragma mark - MXWAddMoneyViewControllerDelegate
+- (void) addMoneyViewController:(MXWAddMoneyViewController *)amvc didIntroduceAnAmount:(NSNumber *)amount forCurrency:(NSString *)currency {
+    [amvc dismissViewControllerAnimated:YES completion:^{
+        MXWMoney * aMoney = [[MXWMoney alloc] initWithAmount:amount currency:currency];
+        [self.wallet addMoney:aMoney];
+        [self.tableView reloadData];
+    }];
+}
+
+- (void) addMoneyViewController:(MXWAddMoneyViewController *)amvc didCancelForCurrency:(NSString *)currency {
+    [amvc dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+//#pragma mark - UIViewControllerTransitioningDelegate
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+//{
+//    MXWSemiModalAnimatedTransition *semiModalAnimatedTransition = [[MXWSemiModalAnimatedTransition alloc] init];
+//    semiModalAnimatedTransition.presenting = YES;
+//    return semiModalAnimatedTransition;
+//}
+
+//- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+//{
+//    MXWSemiModalAnimatedTransition *semiModalAnimatedTransition = [[MXWSemiModalAnimatedTransition alloc] init];
+//    return semiModalAnimatedTransition;
+//}
+
+
+
+
+
+
+
 
 @end

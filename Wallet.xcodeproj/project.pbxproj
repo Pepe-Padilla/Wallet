@@ -16,6 +16,12 @@
 		B17C59B61B22D82A00948832 /* MXWWalletTableViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59B51B22D82A00948832 /* MXWWalletTableViewControllerTest.m */; };
 		B17C59B91B22DB6400948832 /* MXWWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */; };
 		B17C59BA1B22DB6400948832 /* MXWWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */; };
+		B17C59C01B231D5E00948832 /* MXWAddMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59BE1B231D5E00948832 /* MXWAddMoneyViewController.m */; };
+		B17C59C11B231D5E00948832 /* MXWAddMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59BE1B231D5E00948832 /* MXWAddMoneyViewController.m */; };
+		B17C59C21B231D5E00948832 /* MXWAddMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17C59BF1B231D5E00948832 /* MXWAddMoneyViewController.xib */; };
+		B17C59C31B231D5E00948832 /* MXWAddMoneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17C59BF1B231D5E00948832 /* MXWAddMoneyViewController.xib */; };
+		B17C59C61B2332F800948832 /* MXWSemiModalAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59C51B2332F800948832 /* MXWSemiModalAnimatedTransition.m */; };
+		B17C59C71B2332F800948832 /* MXWSemiModalAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B17C59C51B2332F800948832 /* MXWSemiModalAnimatedTransition.m */; };
 		B1D02B681B1CF3BC00426DC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B671B1CF3BC00426DC9 /* main.m */; };
 		B1D02B6B1B1CF3BC00426DC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D02B6A1B1CF3BC00426DC9 /* AppDelegate.m */; };
 		B1D02B731B1CF3BC00426DC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D02B721B1CF3BC00426DC9 /* Images.xcassets */; };
@@ -45,6 +51,11 @@
 		B17C59B51B22D82A00948832 /* MXWWalletTableViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWWalletTableViewControllerTest.m; sourceTree = "<group>"; };
 		B17C59B71B22DB6400948832 /* MXWWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWWalletTableViewController.h; sourceTree = "<group>"; };
 		B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWWalletTableViewController.m; sourceTree = "<group>"; };
+		B17C59BD1B231D5E00948832 /* MXWAddMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWAddMoneyViewController.h; sourceTree = "<group>"; };
+		B17C59BE1B231D5E00948832 /* MXWAddMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWAddMoneyViewController.m; sourceTree = "<group>"; };
+		B17C59BF1B231D5E00948832 /* MXWAddMoneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MXWAddMoneyViewController.xib; sourceTree = "<group>"; };
+		B17C59C41B2332F800948832 /* MXWSemiModalAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXWSemiModalAnimatedTransition.h; sourceTree = "<group>"; };
+		B17C59C51B2332F800948832 /* MXWSemiModalAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXWSemiModalAnimatedTransition.m; sourceTree = "<group>"; };
 		B1D02B621B1CF3BC00426DC9 /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D02B661B1CF3BC00426DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1D02B671B1CF3BC00426DC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +116,11 @@
 			children = (
 				B17C59B71B22DB6400948832 /* MXWWalletTableViewController.h */,
 				B17C59B81B22DB6400948832 /* MXWWalletTableViewController.m */,
+				B17C59BD1B231D5E00948832 /* MXWAddMoneyViewController.h */,
+				B17C59BE1B231D5E00948832 /* MXWAddMoneyViewController.m */,
+				B17C59BF1B231D5E00948832 /* MXWAddMoneyViewController.xib */,
+				B17C59C41B2332F800948832 /* MXWSemiModalAnimatedTransition.h */,
+				B17C59C51B2332F800948832 /* MXWSemiModalAnimatedTransition.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -259,6 +275,7 @@
 			files = (
 				B1D02B761B1CF3BC00426DC9 /* LaunchScreen.xib in Resources */,
 				B1D02B731B1CF3BC00426DC9 /* Images.xcassets in Resources */,
+				B17C59C21B231D5E00948832 /* MXWAddMoneyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17C59C31B231D5E00948832 /* MXWAddMoneyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17C59C61B2332F800948832 /* MXWSemiModalAnimatedTransition.m in Sources */,
 				B1D02B6B1B1CF3BC00426DC9 /* AppDelegate.m in Sources */,
 				B12F8D131B223C7300FF04B9 /* MXWWallet.m in Sources */,
 				B1D02B681B1CF3BC00426DC9 /* main.m in Sources */,
 				B17C59B91B22DB6400948832 /* MXWWalletTableViewController.m in Sources */,
+				B17C59C01B231D5E00948832 /* MXWAddMoneyViewController.m in Sources */,
 				B1D02B991B1D075900426DC9 /* MXWMoney.m in Sources */,
 				B12F8D1C1B22560F00FF04B9 /* MXWBroker.m in Sources */,
 			);
@@ -291,9 +311,11 @@
 			files = (
 				B12F8D141B223C7300FF04B9 /* MXWWallet.m in Sources */,
 				B1D02B9C1B1D0BB900426DC9 /* MXWMoneyTest.m in Sources */,
+				B17C59C71B2332F800948832 /* MXWSemiModalAnimatedTransition.m in Sources */,
 				B12F8D181B2251BC00FF04B9 /* MXWBrokerTest.m in Sources */,
 				B1D02B9A1B1D075900426DC9 /* MXWMoney.m in Sources */,
 				B17C59B61B22D82A00948832 /* MXWWalletTableViewControllerTest.m in Sources */,
+				B17C59C11B231D5E00948832 /* MXWAddMoneyViewController.m in Sources */,
 				B17C59BA1B22DB6400948832 /* MXWWalletTableViewController.m in Sources */,
 				B12F8D161B223C8A00FF04B9 /* MXWWalletTest.m in Sources */,
 				B12F8D1D1B22560F00FF04B9 /* MXWBroker.m in Sources */,

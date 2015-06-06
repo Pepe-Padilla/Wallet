@@ -27,11 +27,11 @@
     // dummy model ->
     MXWWallet * wallet = [MXWWallet new];
     MXWBroker * aBroker = [MXWBroker new];
-    [aBroker addRate:@(2.0) fromCurrency:@"EUR" toCurrency:@"USD"];
+    [aBroker addRate:@(1.1113) fromCurrency:@"EUR" toCurrency:@"USD"];
+    [aBroker addRate:@(0.727922) fromCurrency:@"EUR" toCurrency:@"GBP"];
     
     MXWMoney * someEuros = [MXWMoney euroWithAmount:@(2.0)];
     MXWMoney * otherEuros = [MXWMoney euroWithAmount:@(8.0)];
-    
     MXWMoney * someDollars = [MXWMoney dollarWithAmount:@(4.0)];
     MXWMoney * otherDollars = [MXWMoney dollarWithAmount:@(11.0)];
     
@@ -39,12 +39,17 @@
     [wallet addMoney:someDollars];
     [wallet addMoney:otherEuros];
     [wallet addMoney:otherDollars];
+    [wallet addMoney:[[MXWMoney alloc] initWithAmount:@(10.0) currency:@"GBP"]];
     
     // <- dummy model
     
     MXWWalletTableViewController * wTVC = [[MXWWalletTableViewController alloc] initWithModel:wallet
                                                                                     andBroker:aBroker];
-    self.window.rootViewController = wTVC;
+    
+    UINavigationController * wNav = [UINavigationController new];
+    [wNav pushViewController:wTVC animated:NO];
+    
+    self.window.rootViewController = wNav;
     
     
     

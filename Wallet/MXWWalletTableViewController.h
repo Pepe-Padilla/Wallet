@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MXWAddMoneyViewController.h"
 @class MXWWallet;
 @class MXWBroker;
 
-@interface MXWWalletTableViewController : UITableViewController
+@interface MXWWalletTableViewController : UITableViewController <MXWAddMoneyViewControllerDelegate, UIViewControllerTransitioningDelegate>
 
 - (instancetype)initWithModel:(MXWWallet*) wallet andBroker:(MXWBroker *) broker;
 
