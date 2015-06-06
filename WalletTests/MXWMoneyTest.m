@@ -9,8 +9,11 @@
 @import Foundation;
 #import <XCTest/XCTest.h>
 #import "MXWMoney.h"
+#import "MXWBroker.h"
 
 @interface MXWMoneyTest : XCTestCase
+
+@property (strong, nonatomic) MXWBroker * aBroker;
 
 @end
 
@@ -19,10 +22,14 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.aBroker = [MXWBroker new];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    self.aBroker = nil;
+    
     [super tearDown];
 }
 
@@ -83,12 +90,11 @@
     MXWMoney * euro1 = [MXWMoney euroWithAmount:@(3.0)];
     MXWMoney * euro2 = [MXWMoney euroWithAmount:@(2.0)];
     
-    MXWMoney * euroSum = [euro1 add:euro2];
+    MXWMoney * euroSum = [euro1 add:euro2 withBroker:self.aBroker];
     
     XCTAssertEqualObjects([MXWMoney euroWithAmount: @(5.0)], euroSum);
     
 }
-
 
 
 

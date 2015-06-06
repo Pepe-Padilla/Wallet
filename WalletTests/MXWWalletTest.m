@@ -10,8 +10,11 @@
 #import <XCTest/XCTest.h>
 #import "MXWWallet.h"
 #import "MXWMoney.h"
+#import "MXWBroker.h"
 
 @interface MXWWalletTest : XCTestCase
+
+@property (strong, nonatomic) MXWBroker * aBroker;
 
 @end
 
@@ -20,10 +23,15 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    self.aBroker = [MXWBroker new];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.aBroker = nil;
+    
+    
     [super tearDown];
 }
 
@@ -34,14 +42,17 @@
     
     [aWallet addMoney:someEuros];
     
-    XCTAssertEqual(aWallet.monies.count, 1);
+    XCTAssertEqual([aWallet walletSections].count, 1);
+    XCTAssertEqual([aWallet moniesForCurrency:@"EUR"], 1);
+    XCTAssertEqual([aWallet moniesForCurrency:@"USD"], 0);
     
     [aWallet addMoney:someDollars];
     
-    XCTAssertEqual(aWallet.monies.count, 2);
+    XCTAssertEqual([aWallet walletSections].count, 2);
+    XCTAssertEqual([aWallet moniesForCurrency:@"USD"], 1);
     
-    XCTAssertEqualObjects(someEuros, [aWallet.monies objectAtIndex:0]);
-    XCTAssertEqualObjects(someDollars, [aWallet.monies objectAtIndex:1]);
+    XCTAssertEqualObjects(someEuros, [aWallet moneyForCurrency:@"EUR" atIndex:0]);
+    XCTAssertEqualObjects(someDollars, [aWallet moneyForCurrency:@"USD" atIndex:0]);
 }
 
 -(void) testTakeMoney {
@@ -51,22 +62,41 @@
     
     [aWallet addMoney:someEuros];
     
-    XCTAssertEqual(aWallet.monies.count, 1);
+    XCTAssertEqual([aWallet walletSections].count, 1);
     
     [aWallet addMoney:someDollars];
     
-    XCTAssertEqual(aWallet.monies.count, 2);
+    XCTAssertEqual([aWallet walletSections].count, 2);
     
-    MXWMoney* takenDollar = [aWallet takeMoneyAtIndex:1];
+    MXWMoney* takenDollar = [aWallet takeMoneyForCurrency:@"USD" atIndex:0];
     
-    XCTAssertEqual(aWallet.monies.count, 1);
+    XCTAssertEqual([aWallet walletSections].count, 1);
     
-    MXWMoney* takenEuro = [aWallet takeMoneyAtIndex:0];
+    MXWMoney* takenEuro = [aWallet takeMoneyForCurrency:@"EUR" atIndex:0];
     
-    XCTAssertEqual(aWallet.monies.count, 0);
+    XCTAssertEqual([aWallet walletSections].count, 0);
     
     XCTAssertEqualObjects(someEuros, takenEuro);
     XCTAssertEqualObjects(someDollars, takenDollar);
+}
+
+-(void) testSumTotal {
+    
+    [self.aBroker addRate:@(2.0) fromCurrency:@"EUR" toCurrency:@"USD"];
+    
+    MXWWallet * aWallet = [MXWWallet new];
+    MXWMoney * someEuros = [MXWMoney euroWithAmount:@(2.0)];
+    MXWMoney * someDollars = [MXWMoney dollarWithAmount:@(4.0)];
+    
+    [aWallet addMoney:someEuros];
+    [aWallet addMoney:someDollars];
+    
+    MXWMoney * granTotal = [aWallet sumTotalWithCurrency:@"EUR" andBroker:self.aBroker];
+    
+    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(4.0)], granTotal);
+    
+    
+    
 }
 
 @end

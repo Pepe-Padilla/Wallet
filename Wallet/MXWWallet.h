@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 @class MXWMoney;
+@class MXWBroker;
 
 @interface MXWWallet : NSObject
 
-@property (strong, nonatomic, readonly) NSMutableArray * monies;
+//@property (strong, nonatomic, readonly) NSMutableArray * monies;
 
 - (void) addMoney:(MXWMoney*) aMoney;
-- (MXWMoney*) takeMoneyAtIndex:(NSUInteger) index;
+- (MXWMoney*) takeMoneyForCurrency:(NSString*) currency atIndex:(NSUInteger) index;
+- (MXWMoney*) sumTotalWithCurrency:(NSString*) currency andBroker:(MXWBroker*) broker;
+
+- (NSArray*) walletSections;
+- (NSUInteger) moniesForCurrency:(NSString*) currency;
+- (MXWMoney*) moneyForCurrency:(NSString*) currency atIndex:(NSUInteger) index;
 
 @end

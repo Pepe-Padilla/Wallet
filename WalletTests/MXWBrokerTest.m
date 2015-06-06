@@ -63,6 +63,17 @@
     XCTAssertEqualObjects([self.aBroker reduce:toDollars toCurrency:@"EUR"], [MXWMoney euroWithAmount:@(2.0)]);
 }
 
+-(void) testAddDiferentCurrency {
+    [self.aBroker addRate:@(2.0) fromCurrency:@"EUR" toCurrency:@"USD"];
+    
+    MXWMoney * euro2 = [MXWMoney euroWithAmount:@(2.0)];
+    MXWMoney * dollar4 = [MXWMoney dollarWithAmount:@(4.0)];
+    
+    MXWMoney * euroSum = [euro2 add:dollar4 withBroker:self.aBroker];
+    
+    XCTAssertEqualObjects([MXWMoney euroWithAmount: @(4.0)], euroSum);
+}
+
 
 
 

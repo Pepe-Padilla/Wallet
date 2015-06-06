@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 maxeiware. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@class MXWBroker;
 
 @interface MXWMoney : NSObject
 
@@ -21,6 +22,6 @@
              currency: (NSString *) currency;
 
 - (MXWMoney *) times: (NSNumber *) multiplier;
-- (MXWMoney *) add: (MXWMoney *) aMoney;
+- (MXWMoney *) add: (MXWMoney *) aMoney withBroker:(MXWBroker *) broker;
 
 @end

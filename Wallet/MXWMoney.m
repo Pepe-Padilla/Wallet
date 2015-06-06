@@ -7,6 +7,7 @@
 //
 
 #import "MXWMoney.h"
+#import "MXWBroker.h"
 
 @interface MXWMoney ()
 
@@ -41,9 +42,15 @@
                                     currency: self.currency];
 }
 
-- (MXWMoney *) add: (MXWMoney *) aMoney {
-    return [[MXWMoney alloc] initWithAmount:@([self.amount doubleValue] + [aMoney.amount doubleValue]) currency:self.currency];
+- (MXWMoney *) add: (MXWMoney *) aMoney
+        withBroker: (MXWBroker *)broker{
+    
+    MXWMoney * newMoney = [broker reduce:aMoney toCurrency:self.currency];
+    
+    return [[MXWMoney alloc] initWithAmount:@([self.amount doubleValue] + [newMoney.amount doubleValue]) currency:self.currency];
 }
+
+#pragma mark - Overwrite
 
 - (BOOL)isEqual:(id)object {
     if (self == object)
@@ -54,6 +61,10 @@
     } else {
         return NO;
     }
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@: %@ %@>", NSStringFromClass([self class]), self.amount, self.currency];
 }
 
 @end
