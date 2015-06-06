@@ -162,16 +162,6 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - actions
 -(void) addEUR {
     // 320 , 46
@@ -199,11 +189,31 @@
 }
 
 -(void) addUSD {
+    // 320 , 46
+    MXWAddMoneyViewController * mvc = [[MXWAddMoneyViewController alloc] initWithCurrency:@"USD"];
+    mvc.delegate = self;
     
+    mvc.modalPresentationStyle = UIModalPresentationPopover;
+    
+    [self presentViewController:mvc animated:YES completion:^{
+        //mvc.view.backgroundColor = [UIColor clearColor];
+        //mvc.view.bounds = CGRectMake(0, 64, 320, 46);
+        
+    }];
 }
 
 -(void) addGBP {
+    // 320 , 46
+    MXWAddMoneyViewController * mvc = [[MXWAddMoneyViewController alloc] initWithCurrency:@"GBP"];
+    mvc.delegate = self;
     
+    mvc.modalPresentationStyle = UIModalPresentationPopover;
+    
+    [self presentViewController:mvc animated:YES completion:^{
+        //mvc.view.backgroundColor = [UIColor clearColor];
+        //mvc.view.bounds = CGRectMake(0, 64, 320, 46);
+        
+    }];
 }
 
 #pragma mark - MXWAddMoneyViewControllerDelegate
